@@ -289,3 +289,22 @@ document.addEventListener("DOMContentLoaded", () => {
   initCursorGlow();
   updateActiveNavLink();
 });
+
+// Skill filter for projects
+function filterProjects(skill) {
+  const projects = document.querySelectorAll(".project-card");
+
+  projects.forEach(project => {
+    const projectSkill = project.getAttribute("data-skill");
+
+    if (projectSkill === skill || skill === "all") {
+      project.style.display = "block";
+    } else {
+      project.style.display = "none";
+    }
+  });
+
+  document.getElementById("projects").scrollIntoView({
+    behavior: "smooth"
+  });
+}

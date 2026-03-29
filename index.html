@@ -121,40 +121,35 @@
       </div>
     </section>
 
-    <!-- ═══════════ SKILLS ═══════════ -->
-    <section class="section" id="skills">
-      <div class="section__inner">
-        <div class="section__label">
-          <span class="label-line"></span>
-          <span>02 — Skills</span>
-        </div>
-        <h2 class="section__heading">
-          Tools I work with
-        </h2>
-        <ul class="skills__grid">
-          <li class="skill-card">
-            <div class="skill-card__icon">🐍</div>
-            <span class="skill-card__name">Python</span>
-          </li>
-          <li class="skill-card">
-            <div class="skill-card__icon">🎨</div>
-            <span class="skill-card__name">HTML &amp; CSS</span>
-          </li>
-          <li class="skill-card">
-            <div class="skill-card__icon">⚙️</div>
-            <span class="skill-card__name">C Programming</span>
-          </li>
-          <li class="skill-card">
-            <div class="skill-card__icon">🗄️</div>
-            <span class="skill-card__name">DBMS</span>
-          </li>
-          <li class="skill-card">
-            <div class="skill-card__icon">🔗</div>
-            <span class="skill-card__name">Git &amp; GitHub</span>
-          </li>
-        </ul>
-      </div>
-    </section>
+   <!-- ═══════════ SKILLS ═══════════ -->
+<section class="section" id="skills">
+  <div class="section__inner">
+    <div class="section__label">
+      <span class="label-line"></span>
+      <span>02 — Skills</span>
+    </div>
+    <h2 class="section__heading">
+      Tools I work with
+    </h2>
+    <ul class="skills__grid">
+      <li class="skill-card" onclick="filterProjects('python')">
+        <div class="skill-card__icon">🐍</div>
+        <span class="skill-card__name">Python</span>
+      </li>
+
+      <li class="skill-card" onclick="filterProjects('java')">
+        <div class="skill-card__icon">⚙️</div>
+        <span class="skill-card__name">Java</span>
+      </li>
+
+      <li class="skill-card" onclick="filterProjects('web')">
+        <div class="skill-card__icon">🌐</div>
+        <span class="skill-card__name">Web Development</span>
+      </li>
+
+    </ul>
+  </div>
+</section>
 
     <!-- ═══════════ PROJECTS ═══════════ -->
     <section class="section" id="projects">
@@ -168,7 +163,7 @@
         </h2>
         <div class="projects__grid">
 
-          <article class="project-card">
+          <article class="project-card" data-skill="web">
   <div class="project-card__header">
     <div class="project-card__icon-wrap">
       <span class="project-card__icon">⚔️</span>
@@ -213,7 +208,31 @@
 
   <div class="project-card__glow" aria-hidden="true"></div>
 </article>
-          <article class="project-card">
+
+<article class="project-card" data-skill="python">
+  <div class="project-card__header">
+    <div class="project-card__icon-wrap">
+      <span class="project-card__icon">🚌</span>
+    </div>
+    <span class="project-card__tag">Web · System</span>
+  </div>
+
+  <h3 class="project-card__title">Campus Bus Tracking System</h3>
+
+  <p class="project-card__desc">
+    Smart campus transport tracking system for monitoring buses and improving student commute efficiency.
+  </p>
+
+  <a href="https://github.com/varshiniv-dev/campus-bus-tracking-system"
+     target="_blank"
+     class="project-card__link">
+    View on GitHub →
+  </a>
+
+  <div class="project-card__glow"></div>
+</article>
+
+          <article class="project-card" data-skill="python">
             <div class="project-card__header">
               <div class="project-card__icon-wrap">
                 <span class="project-card__icon">📋</span>
@@ -231,7 +250,7 @@
             <div class="project-card__glow" aria-hidden="true"></div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-skill="web">
             <div class="project-card__header">
               <div class="project-card__icon-wrap">
                 <span class="project-card__icon">🌐</span>
@@ -248,6 +267,29 @@
             </a>
             <div class="project-card__glow" aria-hidden="true"></div>
           </article>
+
+          <article class="project-card" data-skill="web">
+  <div class="project-card__header">
+    <div class="project-card__icon-wrap">
+      <span class="project-card__icon">✨</span>
+    </div>
+    <span class="project-card__tag">Personal · Web</span>
+  </div>
+
+  <h3 class="project-card__title">varshiniv.dev</h3>
+
+  <p class="project-card__desc">
+    Personal digital space showcasing ideas, creativity, and experiments.
+  </p>
+
+  <a href="https://github.com/varshiniv-dev/varshiniv.dev"
+     target="_blank"
+     class="project-card__link">
+    View on GitHub →
+  </a>
+
+  <div class="project-card__glow"></div>
+</article>
 
           <article class="project-card project-card--planned">
             <div class="project-card__header">
@@ -302,6 +344,14 @@
               </div>
               <div class="contact-card__arrow">↗</div>
             </a>
+            <a href="https://www.linkedin.com/in/varshini-v-cs" target="_blank" rel="noopener" class="contact-card">
+  <div class="contact-card__icon">🔗</div>
+  <div class="contact-card__body">
+    <span class="contact-card__label">LinkedIn</span>
+    <span class="contact-card__value">linkedin.com/in/varshini-v-cs</span>
+  </div>
+  <div class="contact-card__arrow">↗</div>
+</a>
           </div>
         </div>
       </div>
