@@ -1,115 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varshini V | Portfolio</title>
-
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Varshini V — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-    <!-- HERO -->
-    <header class="hero">
-  <div class="hero-container fade">
-    
-    <img src="assets/me.jpeg" alt="Varshini" class="profile">
+  <!-- Particle canvas stays, improved in JS -->
+  <canvas id="bg"></canvas>
 
-    <div class="hero-text">
-      <h1>Varshini V</h1>
-      <p class="subtitle">Computer Science student</p>
-      <p class="tagline">learning, building, becoming.</p>
+  <!-- Ambient glows -->
+  <div class="glow-orb glow-orb--1" aria-hidden="true"></div>
+  <div class="glow-orb glow-orb--2" aria-hidden="true"></div>
 
-      <div class="buttons">
-        <a href="#projects" class="btn primary">View Projects</a>
-        <a href="#contact" class="btn secondary">Contact Me</a>
-      </div>
-    </div>
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">V</div>
+    <ul class="nav__links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav__burger" id="burger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
+  <!-- MOBILE DRAWER -->
+  <div class="drawer" id="drawer">
+    <ul>
+      <li><a href="#about"    onclick="closeDrawer()">About</a></li>
+      <li><a href="#skills"   onclick="closeDrawer()">Skills</a></li>
+      <li><a href="#projects" onclick="closeDrawer()">Projects</a></li>
+      <li><a href="#contact"  onclick="closeDrawer()">Contact</a></li>
+    </ul>
   </div>
-</header>
 
-    <!-- ABOUT -->
-    <section class="section fade">
-        <h2>About</h2>
-        <p>
-            I’m a Computer Science student who values calm focus and consistent growth.
-            I enjoy understanding concepts deeply and improving one step at a time.
-            Currently exploring Python, web development, and core computer science fundamentals.
-        </p>
+  <div class="content">
+
+    <!-- ═══════════ HERO ═══════════ -->
+    <header class="hero" id="home">
+      <div class="hero__inner">
+
+        <!-- Profile photo -->
+        <div class="hero__photo-wrap">
+          <div class="hero__photo-ring" aria-hidden="true"></div>
+          <img src="assets/me.jpeg" alt="Varshini V" class="hero__photo" />
+          <div class="hero__photo-dot" aria-hidden="true"></div>
+        </div>
+
+        <!-- Text -->
+        <div class="hero__text">
+          <p class="hero__eyebrow">
+            <span class="hero__status-dot"></span>
+            Available for opportunities
+          </p>
+
+          <h1 class="hero__name">
+            <span class="hero__name-line hero__name-line--accent">Varshini V</span>
+          </h1>
+
+          <p class="hero__role">Computer Science Student</p>
+
+          <p class="hero__tagline">
+            learning, building, becoming.
+          </p>
+
+          <div class="hero__buttons">
+            <a href="#projects" class="btn btn--primary">
+              <span>View Projects</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn--ghost">Contact Me</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll hint -->
+      <div class="hero__scroll" aria-hidden="true">
+        <div class="hero__scroll-line"></div>
+        <span>scroll</span>
+      </div>
+    </header>
+
+    <!-- ═══════════ ABOUT ═══════════ -->
+    <section class="section" id="about">
+      <div class="section__inner">
+        <div class="section__label">
+          <span class="label-line"></span>
+          <span>01 — About</span>
+        </div>
+        <div class="about__grid">
+          <h2 class="section__heading">
+            A calm mind,<br/>
+            <span class="gradient-text">always learning.</span>
+          </h2>
+          <div class="about__body">
+            <p>
+              I'm a Computer Science student who values calm focus and consistent growth.
+              I enjoy understanding concepts deeply and improving one step at a time.
+            </p>
+            <p>
+              Currently exploring Python, web development, and core CS fundamentals —
+              building things that matter, one commit at a time.
+            </p>
+            <div class="about__chips">
+              <span class="chip">🎓 CS Student</span>
+              <span class="chip">🐍 Python</span>
+              <span class="chip">🌐 Web Dev</span>
+              <span class="chip">📐 CS Fundamentals</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- SKILLS -->
-    <section class="section fade">
-        <h2>Skills</h2>
-        <ul class="skills">
-            <li>Python (Basics)</li>
-            <li>HTML & CSS</li>
-            <li>C Programming</li>
-            <li>DBMS Fundamentals</li>
-            <li>Git & GitHub</li>
+    <!-- ═══════════ SKILLS ═══════════ -->
+    <section class="section" id="skills">
+      <div class="section__inner">
+        <div class="section__label">
+          <span class="label-line"></span>
+          <span>02 — Skills</span>
+        </div>
+        <h2 class="section__heading">
+          Tools I work with
+        </h2>
+        <ul class="skills__grid">
+          <li class="skill-card">
+            <div class="skill-card__icon">🐍</div>
+            <span class="skill-card__name">Python</span>
+          </li>
+          <li class="skill-card">
+            <div class="skill-card__icon">🎨</div>
+            <span class="skill-card__name">HTML &amp; CSS</span>
+          </li>
+          <li class="skill-card">
+            <div class="skill-card__icon">⚙️</div>
+            <span class="skill-card__name">C Programming</span>
+          </li>
+          <li class="skill-card">
+            <div class="skill-card__icon">🗄️</div>
+            <span class="skill-card__name">DBMS</span>
+          </li>
+          <li class="skill-card">
+            <div class="skill-card__icon">🔗</div>
+            <span class="skill-card__name">Git &amp; GitHub</span>
+          </li>
         </ul>
+      </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section class="section fade" id="projects">
-        <h2>Projects</h2>
-
-        <div class="project">
-            <h3>Student Management System</h3>
-            <p>
-                Python-based project implementing CRUD operations
-                to manage student records efficiently.
-            </p>
-            
-        <a href="https://github.com/varshiniv-dev/student-management-system" target="_blank" class="project-link">
-        View on GitHub ->
-        </a>
+    <!-- ═══════════ PROJECTS ═══════════ -->
+    <section class="section" id="projects">
+      <div class="section__inner">
+        <div class="section__label">
+          <span class="label-line"></span>
+          <span>03 — Projects</span>
         </div>
+        <h2 class="section__heading">
+          Things I've built
+        </h2>
+        <div class="projects__grid">
 
-        <div class="project">
-            <h3>Personal Portfolio Website</h3>
-            <p>
-                A minimalist portfolio built using HTML, CSS, and JavaScript
-                focusing on elegance and usability.
-            </p>
-        <a href="https://github.com/varshiniv-dev/portfolio" target="_blank" class="project-link">
-        View on GitHub ->
-        </a>
-        </div>
+          <article class="project-card">
+  <div class="project-card__header">
+    <div class="project-card__icon-wrap">
+      <span class="project-card__icon">⚔️</span>
+    </div>
+    <span class="project-card__tag">HTML · CSS · JavaScript</span>
+  </div>
 
-        <div class="project">
-            <h3>Notes API (Planned)</h3>
-            <p>
-                A simple REST API using Flask for creating and managing notes.
-            </p>
-        <a href="https://github.com/varshiniv-dev/notes-api" target="_blank" class="project-link">
-        View on GitHub ->
-        </a>    
+  <h3 class="project-card__title">CodexQuest</h3>
+
+  <p class="project-card__desc">
+    Gamified coding learning platform inspired by RPG and anime worlds. 
+    Complete quests, gain XP, unlock worlds, and level up while learning programming.
+  </p>
+
+  <a href="https://varshiniv-dev.github.io/codexquest/" 
+     target="_blank" 
+     rel="noopener" 
+     class="project-card__link">
+    Live Demo
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <path d="M2 12L12 2M12 2H5M12 2v7"
+      stroke="currentColor"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"/>
+    </svg>
+  </a>
+
+  <a href="https://github.com/varshiniv-dev/codexquest" 
+     target="_blank" 
+     rel="noopener" 
+     class="project-card__link">
+    View on GitHub
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <path d="M2 12L12 2M12 2H5M12 2v7"
+      stroke="currentColor"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"/>
+    </svg>
+  </a>
+
+  <div class="project-card__glow" aria-hidden="true"></div>
+</article>
+          <article class="project-card">
+            <div class="project-card__header">
+              <div class="project-card__icon-wrap">
+                <span class="project-card__icon">📋</span>
+              </div>
+              <span class="project-card__tag">Python · CRUD</span>
+            </div>
+            <h3 class="project-card__title">Student Management System</h3>
+            <p class="project-card__desc">Python CRUD project for managing student records. Covers core data operations and file handling.</p>
+            <a href="https://github.com/varshiniv-dev/student-management-system" target="_blank" rel="noopener" class="project-card__link">
+              View on GitHub
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <div class="project-card__glow" aria-hidden="true"></div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__header">
+              <div class="project-card__icon-wrap">
+                <span class="project-card__icon">🌐</span>
+              </div>
+              <span class="project-card__tag">HTML · CSS · JS</span>
+            </div>
+            <h3 class="project-card__title">Portfolio Website</h3>
+            <p class="project-card__desc">Minimal animated personal website showcasing projects and skills with a clean dark aesthetic.</p>
+            <a href="https://github.com/varshiniv-dev/portfolio" target="_blank" rel="noopener" class="project-card__link">
+              View on GitHub
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <div class="project-card__glow" aria-hidden="true"></div>
+          </article>
+
+          <article class="project-card project-card--planned">
+            <div class="project-card__header">
+              <div class="project-card__icon-wrap">
+                <span class="project-card__icon">📝</span>
+              </div>
+              <span class="project-card__tag project-card__tag--dim">Flask · REST API</span>
+            </div>
+            <h3 class="project-card__title">Notes API <span class="project-card__planned-badge">Planned</span></h3>
+            <p class="project-card__desc">Flask REST API for creating and managing notes. Currently in planning — coming soon.</p>
+            <a href="https://github.com/varshiniv-dev/notes-api" target="_blank" rel="noopener" class="project-card__link">
+              View on GitHub
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <div class="project-card__glow" aria-hidden="true"></div>
+          </article>
+
         </div>
+      </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="section fade" id="contact">
-        <h2>Contact</h2>
-        <p class="contact">
-            📧 varshiniv.dev@gmail.com <br>
-            <a href="mailto:varshiniv.dev@gmail.com?subject=Hello Varshini&body=I saw your portfolio and wanted to connect!" class="contact-link"> 
-        varshiniv.dev@gmail.com
-        </a>
-        <br><br>
-            💻 github.com/varshiniv-dev
-            <a href="https://github.com/varshiniv-dev" target="_blank" class="contact-link">
-        github.com/varshiniv-dev
-        </a>
-        </p>
+    <!-- ═══════════ CONTACT ═══════════ -->
+    <section class="section" id="contact">
+      <div class="section__inner">
+        <div class="section__label">
+          <span class="label-line"></span>
+          <span>04 — Contact</span>
+        </div>
+        <div class="contact__wrap">
+          <h2 class="section__heading contact__heading">
+            Let's connect.
+          </h2>
+          <p class="contact__sub">
+            Open to learning opportunities, collaborations, and conversations.
+          </p>
+          <div class="contact__links">
+            <a href="mailto:varshiniv.dev@gmail.com" class="contact-card">
+              <div class="contact-card__icon">✉️</div>
+              <div class="contact-card__body">
+                <span class="contact-card__label">Email</span>
+                <span class="contact-card__value">varshiniv.dev@gmail.com</span>
+              </div>
+              <div class="contact-card__arrow">↗</div>
+            </a>
+            <a href="https://github.com/varshiniv-dev" target="_blank" rel="noopener" class="contact-card">
+              <div class="contact-card__icon">💻</div>
+              <div class="contact-card__body">
+                <span class="contact-card__label">GitHub</span>
+                <span class="contact-card__value">github.com/varshiniv-dev</span>
+              </div>
+              <div class="contact-card__arrow">↗</div>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <footer>
-        <p>© Varshini V</p>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <p class="footer__copy">© 2025 Varshini V — designed with care.</p>
+        <a href="#home" class="footer__top" aria-label="Back to top">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M9 14V4M4 9l5-5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
     </footer>
 
-    <script src="script.js"></script>
+  </div><!-- /content -->
+
+  <script src="script.js"></script>
 </body>
 </html>
