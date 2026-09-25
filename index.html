@@ -1,115 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varshini V | Portfolio</title>
-
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Varshini V — Backend Developer</title>
+<meta name="description" content="Varshini V — Computer Science Student, Backend Developer, Python Developer. Portfolio of projects, journey and credentials.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- HERO -->
-    <header class="hero">
-  <div class="hero-container fade">
-    
-    <img src="assets/me.jpeg" alt="Varshini" class="profile">
+<!-- ============ CUSTOM CURSOR / PROGRESS BAR ============ -->
+<div class="scroll-progress" id="scrollProgress"></div>
 
-    <div class="hero-text">
-      <h1>Varshini V</h1>
-      <p class="subtitle">Computer Science student</p>
-      <p class="tagline">learning, building, becoming.</p>
-
-      <div class="buttons">
-        <a href="#projects" class="btn primary">View Projects</a>
-        <a href="#contact" class="btn secondary">Contact Me</a>
-      </div>
-    </div>
-
-  </div>
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <nav class="nav-container">
+    <a href="#hero" class="nav-logo">VV<span class="nav-logo-dot">.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+      <li><a href="#journey" class="nav-link" data-section="journey">Journey</a></li>
+      <li><a href="#stack" class="nav-link" data-section="stack">Stack</a></li>
+      <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+      <li><a href="#credentials" class="nav-link" data-section="credentials">Credentials</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Let's talk</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 </header>
 
-    <!-- ABOUT -->
-    <section class="section fade">
-        <h2>About</h2>
-        <p>
-            I’m a Computer Science student who values calm focus and consistent growth.
-            I enjoy understanding concepts deeply and improving one step at a time.
-            Currently exploring Python, web development, and core computer science fundamentals.
-        </p>
-    </section>
+<main>
 
-    <!-- SKILLS -->
-    <section class="section fade">
-        <h2>Skills</h2>
-        <ul class="skills">
-            <li>Python (Basics)</li>
-            <li>HTML & CSS</li>
-            <li>C Programming</li>
-            <li>DBMS Fundamentals</li>
-            <li>Git & GitHub</li>
-        </ul>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="section fade" id="projects">
-        <h2>Projects</h2>
-
-        <div class="project">
-            <h3>Student Management System</h3>
-            <p>
-                Python-based project implementing CRUD operations
-                to manage student records efficiently.
-            </p>
-            
-        <a href="https://github.com/varshiniv-dev/student-management-system" target="_blank" class="project-link">
-        View on GitHub ->
-        </a>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="hero-photo-wrap">
+        <div class="hero-photo" role="img" aria-label="Portrait of Varshini V">
+          <img src="assets/profile.jpeg" alt = "Varshini V" class="hero-photo">
         </div>
+        <div class="hero-photo-ring" aria-hidden="true"></div>
+      </div>
+      <h1 class="hero-name">Varshini V</h1>
+      <p class="hero-role">Backend Developer &amp; Computer Science Student</p>
+    </div>
+    <a href="#introduction" class="scroll-indicator" aria-label="Scroll to next section">
+      <span class="scroll-indicator-text">Scroll</span>
+      <span class="scroll-indicator-line"></span>
+    </a>
+  </section>
 
-        <div class="project">
-            <h3>Personal Portfolio Website</h3>
-            <p>
-                A minimalist portfolio built using HTML, CSS, and JavaScript
-                focusing on elegance and usability.
-            </p>
-        <a href="https://github.com/varshiniv-dev/portfolio" target="_blank" class="project-link">
-        View on GitHub ->
-        </a>
+  <!-- ============ INTRODUCTION ============ -->
+  <section class="introduction" id="introduction">
+    <div class="section-inner">
+      <p class="reveal eyebrow">Backend Developer &bull; Computer Science Student</p>
+      <p class="reveal intro-subtitle">Building practical software through curiosity, consistency, and creativity.</p>
+      <div class="reveal intro-actions">
+        <a href="#projects" class="btn btn-primary">Projects</a>
+        <a href="assets/resume.pdf" class="btn btn-outline" download>Resume</a>
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="section-inner about-grid">
+      <div class="about-left reveal">
+        <p class="about-word">Curious.</p>
+        <p class="about-word">Creative.</p>
+        <p class="about-word">Consistent.</p>
+      </div>
+      <div class="about-right">
+        <p class="reveal about-para">I'm a Computer Science student who likes taking software apart to understand how it holds together, then rebuilding it a little better. Most of my time goes into backend systems &mdash; the parts of an application that quietly do the heavy lifting while the interface gets the applause.</p>
+        <p class="reveal about-para">Python is where I'm most comfortable, and Flask is usually where my ideas start turning into working applications. I care about writing code that's readable six months later, not just code that runs today, which is why data structures and clean logic matter as much to me as shipping features.</p>
+        <p class="reveal about-para">Outside of coursework, I contribute to open source when I can and treat every small project as practice for a larger one. I'd rather learn by building something real than by reading about it indefinitely.</p>
+        <div class="reveal about-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Backend</span>
+          <span class="tag">Flask</span>
+          <span class="tag">DSA</span>
+          <span class="tag">Open Source</span>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="project">
-            <h3>Notes API (Planned)</h3>
-            <p>
-                A simple REST API using Flask for creating and managing notes.
-            </p>
-        <a href="https://github.com/varshiniv-dev/notes-api" target="_blank" class="project-link">
-        View on GitHub ->
-        </a>    
+  <!-- ============ JOURNEY ============ -->
+  <section class="journey" id="journey">
+    <div class="section-inner">
+      <p class="reveal eyebrow">Journey</p>
+      <h2 class="reveal section-heading">How I got here</h2>
+
+      <div class="reveal timeline-nav" id="timelineNav" role="tablist" aria-label="Journey timeline">
+        <button class="timeline-btn active" data-year="2024" role="tab" aria-selected="true">2024</button>
+        <button class="timeline-btn" data-year="2025" role="tab" aria-selected="false">2025</button>
+        <button class="timeline-btn" data-year="2026" role="tab" aria-selected="false">2026</button>
+        <button class="timeline-btn" data-year="future" role="tab" aria-selected="false">Future</button>
+      </div>
+
+      <div class="reveal timeline-panel" id="timelinePanel">
+        <!-- populated by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TECH STACK ============ -->
+  <section class="stack" id="stack">
+    <div class="section-inner">
+      <p class="reveal eyebrow">Tech Stack</p>
+      <h2 class="reveal section-heading">Tools I reach for</h2>
+      <div class="reveal stack-orbit" id="stackOrbit">
+        <div class="stack-center">
+          <span>TECH<br>STACK</span>
         </div>
-    </section>
+        <div class="stack-item" style="--angle:0deg"><span>Python</span></div>
+        <div class="stack-item" style="--angle:32.7deg"><span>Flask</span></div>
+        <div class="stack-item" style="--angle:65.4deg"><span>HTML</span></div>
+        <div class="stack-item" style="--angle:98.1deg"><span>CSS</span></div>
+        <div class="stack-item" style="--angle:130.8deg"><span>JavaScript</span></div>
+        <div class="stack-item" style="--angle:163.5deg"><span>Git</span></div>
+        <div class="stack-item" style="--angle:196.2deg"><span>GitHub</span></div>
+        <div class="stack-item" style="--angle:228.9deg"><span>SQLite</span></div>
+        <div class="stack-item" style="--angle:261.6deg"><span>SQL</span></div>
+        <div class="stack-item" style="--angle:294.3deg"><span>Linux</span></div>
+        <div class="stack-item" style="--angle:327deg"><span>VS Code</span></div>
+      </div>
+    </div>
+  </section>
 
-    <!-- CONTACT -->
-    <section class="section fade" id="contact">
-        <h2>Contact</h2>
-        <p class="contact">
-            📧 varshiniv.dev@gmail.com <br>
-            <a href="mailto:varshiniv.dev@gmail.com?subject=Hello Varshini&body=I saw your portfolio and wanted to connect!" class="contact-link"> 
-        varshiniv.dev@gmail.com
-        </a>
-        <br><br>
-            💻 github.com/varshiniv-dev
-            <a href="https://github.com/varshiniv-dev" target="_blank" class="contact-link">
-        github.com/varshiniv-dev
-        </a>
-        </p>
-    </section>
+  <!-- ============ PROJECTS ============ -->
+  <section class="projects" id="projects">
+    <div class="section-inner">
+      <p class="reveal eyebrow">Projects</p>
+      <h2 class="reveal section-heading">Selected work</h2>
 
-    <footer>
-        <p>© Varshini V</p>
-    </footer>
+      <article class="reveal project-card">
+        <div class="project-media" aria-hidden="true"><span>01</span></div>
+        <div class="project-body">
+          <span class="status-badge status-completed">Completed</span>
+          <h3 class="project-title">Campus Transport Management System</h3>
+          <p class="project-desc">A smart campus transportation management platform with live tracking, emergency alerts, delay prediction, driver monitoring, traffic conditions and safety features.</p>
+          <div class="tech-pills">
+            <span class="pill">Python</span>
+            <span class="pill">Flask</span>
+            <span class="pill">SQLite</span>
+            <span class="pill">HTML</span>
+            <span class="pill">CSS</span>
+            <span class="pill">JavaScript</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
+            <a href="#" class="btn btn-ghost btn-sm">Live Demo</a>
+          </div>
+        </div>
+      </article>
 
-    <script src="script.js"></script>
+      <article class="reveal project-card project-card-reverse">
+        <div class="project-media" aria-hidden="true"><span>02</span></div>
+        <div class="project-body">
+          <span class="status-badge status-progress">In Progress</span>
+          <h3 class="project-title">CodexQuest</h3>
+          <p class="project-desc">A gamified coding platform inspired by RPG progression &mdash; solve challenges, earn experience, level up skills, and track growth like a character sheet for your coding ability.</p>
+          <div class="tech-pills">
+            <span class="pill">Python</span>
+            <span class="pill">Flask</span>
+            <span class="pill">JavaScript</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
+            <a href="#" class="btn btn-ghost btn-sm">Live Demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="reveal project-card">
+        <div class="project-media" aria-hidden="true"><span>03</span></div>
+        <div class="project-body">
+          <span class="status-badge status-completed">Completed</span>
+          <h3 class="project-title">Student Management System</h3>
+          <p class="project-desc">A console-based Python project for managing student records &mdash; add, update, search and organize academic data with clean, structured logic.</p>
+          <div class="tech-pills">
+            <span class="pill">Python</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
+            <a href="#" class="btn btn-ghost btn-sm">Live Demo</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ CREDENTIALS ============ -->
+  <section class="credentials" id="credentials">
+    <div class="section-inner">
+      <p class="reveal eyebrow">Credentials</p>
+      <h2 class="reveal section-heading">Recognition &amp; experience</h2>
+      <div class="credentials-grid">
+        <div class="reveal credential-card">
+          <span class="credential-type">Internship</span>
+          <h3 class="credential-title">GlowLogics Internship</h3>
+          <span class="credential-year">2026</span>
+          <a href="#" class="btn btn-outline btn-sm">View Credential</a>
+        </div>
+        <div class="reveal credential-card">
+          <span class="credential-type">Internship</span>
+          <h3 class="credential-title">Python Internship</h3>
+          <span class="credential-year">2025</span>
+          <a href="#" class="btn btn-outline btn-sm">View Credential</a>
+        </div>
+        <div class="reveal credential-card">
+          <span class="credential-type">Workshop</span>
+          <h3 class="credential-title">Flask &amp; Backend Systems Workshop</h3>
+          <span class="credential-year">2025</span>
+          <a href="#" class="btn btn-outline btn-sm">View Credential</a>
+        </div>
+        <div class="reveal credential-card">
+          <span class="credential-type">Hackathon</span>
+          <h3 class="credential-title">RRCE Ideathon</h3>
+          <span class="credential-year">2026</span>
+          <a href="#" class="btn btn-outline btn-sm">View Credential</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="section-inner contact-inner">
+      <p class="reveal eyebrow">Contact</p>
+      <h2 class="reveal contact-heading">Let's Connect</h2>
+      <p class="reveal contact-text">Have an idea, an opportunity, or simply want to connect?</p>
+      <div class="reveal contact-actions">
+        <a href="mailto:hello@varshiniv.dev" class="btn btn-primary">Email</a>
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a>
+        <a href="assets/Varshini_V_Resume.pdf" class="btn btn-ghost" download>Resume</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <p>Designed &amp; Developed by Varshini V</p>
+  <p>&copy; 2026</p>
+</footer>
+
+<!-- ============ BACK TO TOP ============ -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+</button>
+
+<script src="script.js"></script>
 </body>
 </html>
