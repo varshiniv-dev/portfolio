@@ -1,596 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Varshini V — Backend Developer</title>
-<meta name="description" content="Varshini V — Computer Science Student, Backend Developer, Python Developer. Portfolio of projects, journey and credentials.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Varshini V | CSE Student, Frontend, Python & AI/ML Prototypes</title>
+<meta name="description" content="Portfolio of Varshini V, a Computer Science Engineering student in Mandya building interactive web experiences, Flask apps and AI/ML project prototypes.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- ============ CUSTOM CURSOR / PROGRESS BAR ============ -->
-<div class="scroll-progress" id="scrollProgress"></div>
-
-<!-- ============ NAVBAR ============ -->
-<header class="navbar" id="navbar">
-  <nav class="nav-container">
-    <a href="#hero" class="nav-logo">VV<span class="nav-logo-dot">.</span></a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
-      <li><a href="#journey" class="nav-link" data-section="journey">Journey</a></li>
-      <li><a href="#stack" class="nav-link" data-section="stack">Stack</a></li>
-      <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
-      <li><a href="#credentials" class="nav-link" data-section="credentials">Credentials</a></li>
-      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
-    </ul>
-    <a href="#contact" class="nav-cta">Let's talk</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="warp"><feTurbulence type="fractalNoise" baseFrequency=".006 .012" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="60"/></filter></svg>
+<div class="ambient" id="ambient" data-mood="hero" aria-hidden="true">
+  <div class="shift">
+    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  </div>
+  <div class="words">
+    <span class="w w1" data-t="CREATE" data-show="hero contact">CREATE</span>
+    <span class="w w2" data-t="DREAM" data-show="story path">DREAM</span>
+    <span class="w w3" data-t="BUILD" data-show="work">BUILD</span>
+    <span class="w w4" data-t="CODE" data-show="lab">CODE</span>
+    <span class="w w5" data-t="EXPLORE" data-show="concept">EXPLORE</span>
+  </div>
+  <div class="dots"></div><div class="grain"></div><div class="vig"></div>
+</div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<a class="skip" href="#work">Skip to projects</a>
+<header class="nav">
+  <a class="logo" href="#top" aria-label="Varshini V, home">V.</a>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button>
+  <nav id="menu" aria-label="Main">
+    <a href="#story">Story</a><a href="#work">Projects</a><a href="#lab">AI lab</a><a href="#concept">Concept</a><a href="#path">Experience</a><a href="#contact">Contact</a>
   </nav>
 </header>
 
-<main>
-
-  <!-- ============ HERO ============ -->
-  <section class="hero" id="hero">
-    <div class="hero-glow" aria-hidden="true"></div>
-    <div class="hero-content">
-      <div class="hero-photo-wrap">
-        <div class="hero-photo" role="img" aria-label="Portrait of Varshini V">
-          <img src="assets/profile.jpeg" alt = "Varshini V" class="hero-photo">
-=======
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Varshini V — Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
-</head>
-<body>
-
-  <!-- Particle canvas stays, improved in JS -->
-  <canvas id="bg"></canvas>
-
-  <!-- Ambient glows -->
-  <div class="glow-orb glow-orb--1" aria-hidden="true"></div>
-  <div class="glow-orb glow-orb--2" aria-hidden="true"></div>
-
-  <!-- NAV -->
-  <nav class="nav" id="nav">
-    <div class="nav__logo">V</div>
-    <ul class="nav__links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="nav__burger" id="burger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-
-  <!-- MOBILE DRAWER -->
-  <div class="drawer" id="drawer">
-    <ul>
-      <li><a href="#about"    onclick="closeDrawer()">About</a></li>
-      <li><a href="#skills"   onclick="closeDrawer()">Skills</a></li>
-      <li><a href="#projects" onclick="closeDrawer()">Projects</a></li>
-      <li><a href="#contact"  onclick="closeDrawer()">Contact</a></li>
-    </ul>
-  </div>
-
-  <div class="content">
-
-    <!-- ═══════════ HERO ═══════════ -->
-    <header class="hero" id="home">
-      <div class="hero__inner">
-
-        <!-- Profile photo -->
-        <div class="hero__photo-wrap">
-          <div class="hero__photo-ring" aria-hidden="true"></div>
-          <img src="assets/me.jpeg" alt="Varshini V" class="hero__photo" />
-          <div class="hero__photo-dot" aria-hidden="true"></div>
->>>>>>> acb0f5b1f587ea01b7096bbd7f3d864083ccc88f
-        </div>
-        <div class="hero-photo-ring" aria-hidden="true"></div>
-      </div>
-      <h1 class="hero-name">Varshini V</h1>
-      <p class="hero-role">Backend Developer &amp; Computer Science Student</p>
+<main id="top">
+<section class="hero" data-mood="hero">
+    <div class="wrap hero-in">
+    <div class="hero-copy">
+    <p class="boot" id="boot" aria-hidden="true">&gt; booting profile…</p>
+    <h1><span class="hi">Hi, I'm</span>Varshini&nbsp;V.</h1>
+    <p class="role">Computer Science Engineering student</p>
+    <p class="focus">Frontend Development · Python · AI/ML Project Prototypes</p>
+    <p class="lede">I build interactive web experiences and practical Python/AI applications while exploring the intersection of technology, creativity, and product design.</p>
+    <div class="cta">
+      <a class="btn primary mag" href="#work">Explore my work</a>
+      <a class="btn mag" href="assets/Varshini_V_Resume.pdf" target="_blank" rel="noopener">View resume</a>
     </div>
-    <a href="#introduction" class="scroll-indicator" aria-label="Scroll to next section">
-      <span class="scroll-indicator-text">Scroll</span>
-      <span class="scroll-indicator-line"></span>
-    </a>
-  </section>
-
-<<<<<<< HEAD
-  <!-- ============ INTRODUCTION ============ -->
-  <section class="introduction" id="introduction">
-    <div class="section-inner">
-      <p class="reveal eyebrow">Backend Developer &bull; Computer Science Student</p>
-      <p class="reveal intro-subtitle">Building practical software through curiosity, consistency, and creativity.</p>
-      <div class="reveal intro-actions">
-        <a href="#projects" class="btn btn-primary">Projects</a>
-        <a href="assets/resume.pdf" class="btn btn-outline" download>Resume</a>
-        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">GitHub</a>
+    <p class="soc"><a href="https://github.com/varshiniv-dev" target="_blank" rel="noopener">GitHub</a> <a href="https://www.linkedin.com/in/varshini-v-cs/" target="_blank" rel="noopener">LinkedIn</a></p>
+    </div>
+    <div class="hero-art" id="heroArt">
+      <div class="orbit">
+        <svg class="ring r-out" viewBox="0 0 400 400" aria-hidden="true"><defs><path id="circ" d="M200,200 m-170,0 a170,170 0 1,1 340,0 a170,170 0 1,1 -340,0"/></defs><text><textPath href="#circ" textLength="1060" lengthAdjust="spacing">FRONTEND • PYTHON • AI/ML • CREATIVE CODE • BUILD • LEARN • </textPath></text></svg>
+        <svg class="ring r-mid" viewBox="0 0 400 400" aria-hidden="true"><circle class="l" cx="200" cy="200" r="150"/><g class="mk"><circle cx="350" cy="200" r="3.2"/><circle cx="173.9" cy="347.7" r="2.4"/><circle cx="275" cy="70.1" r="2.4"/><circle class="bl" cx="77.1" cy="113.9" r="3.6"/><path d="M196 52h8M200 48v8M52 200h8M56 196v8"/></g></svg>
+        <svg class="ring r-in" viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="134"/></svg>
+        <figure class="portrait hero-portrait"><img src="assets/me.jpeg" width="1080" height="1080" fetchpriority="high" alt="Portrait of Varshini V, a black and white photo of her smiling in glasses and making a peace sign"></figure>
       </div>
     </div>
-  </section>
-
-  <!-- ============ ABOUT ============ -->
-  <section class="about" id="about">
-    <div class="section-inner about-grid">
-      <div class="about-left reveal">
-        <p class="about-word">Curious.</p>
-        <p class="about-word">Creative.</p>
-        <p class="about-word">Consistent.</p>
-      </div>
-      <div class="about-right">
-        <p class="reveal about-para">I'm a Computer Science student who likes taking software apart to understand how it holds together, then rebuilding it a little better. Most of my time goes into backend systems &mdash; the parts of an application that quietly do the heavy lifting while the interface gets the applause.</p>
-        <p class="reveal about-para">Python is where I'm most comfortable, and Flask is usually where my ideas start turning into working applications. I care about writing code that's readable six months later, not just code that runs today, which is why data structures and clean logic matter as much to me as shipping features.</p>
-        <p class="reveal about-para">Outside of coursework, I contribute to open source when I can and treat every small project as practice for a larger one. I'd rather learn by building something real than by reading about it indefinitely.</p>
-        <div class="reveal about-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Backend</span>
-          <span class="tag">Flask</span>
-          <span class="tag">DSA</span>
-          <span class="tag">Open Source</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ JOURNEY ============ -->
-  <section class="journey" id="journey">
-    <div class="section-inner">
-      <p class="reveal eyebrow">Journey</p>
-      <h2 class="reveal section-heading">How I got here</h2>
-
-      <div class="reveal timeline-nav" id="timelineNav" role="tablist" aria-label="Journey timeline">
-        <button class="timeline-btn active" data-year="2024" role="tab" aria-selected="true">2024</button>
-        <button class="timeline-btn" data-year="2025" role="tab" aria-selected="false">2025</button>
-        <button class="timeline-btn" data-year="2026" role="tab" aria-selected="false">2026</button>
-        <button class="timeline-btn" data-year="future" role="tab" aria-selected="false">Future</button>
-      </div>
-
-      <div class="reveal timeline-panel" id="timelinePanel">
-        <!-- populated by script.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ TECH STACK ============ -->
-  <section class="stack" id="stack">
-    <div class="section-inner">
-      <p class="reveal eyebrow">Tech Stack</p>
-      <h2 class="reveal section-heading">Tools I reach for</h2>
-      <div class="reveal stack-orbit" id="stackOrbit">
-        <div class="stack-center">
-          <span>TECH<br>STACK</span>
-        </div>
-        <div class="stack-item" style="--angle:0deg"><span>Python</span></div>
-        <div class="stack-item" style="--angle:32.7deg"><span>Flask</span></div>
-        <div class="stack-item" style="--angle:65.4deg"><span>HTML</span></div>
-        <div class="stack-item" style="--angle:98.1deg"><span>CSS</span></div>
-        <div class="stack-item" style="--angle:130.8deg"><span>JavaScript</span></div>
-        <div class="stack-item" style="--angle:163.5deg"><span>Git</span></div>
-        <div class="stack-item" style="--angle:196.2deg"><span>GitHub</span></div>
-        <div class="stack-item" style="--angle:228.9deg"><span>SQLite</span></div>
-        <div class="stack-item" style="--angle:261.6deg"><span>SQL</span></div>
-        <div class="stack-item" style="--angle:294.3deg"><span>Linux</span></div>
-        <div class="stack-item" style="--angle:327deg"><span>VS Code</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PROJECTS ============ -->
-  <section class="projects" id="projects">
-    <div class="section-inner">
-      <p class="reveal eyebrow">Projects</p>
-      <h2 class="reveal section-heading">Selected work</h2>
-
-      <article class="reveal project-card">
-        <div class="project-media" aria-hidden="true"><span>01</span></div>
-        <div class="project-body">
-          <span class="status-badge status-completed">Completed</span>
-          <h3 class="project-title">Campus Transport Management System</h3>
-          <p class="project-desc">A smart campus transportation management platform with live tracking, emergency alerts, delay prediction, driver monitoring, traffic conditions and safety features.</p>
-          <div class="tech-pills">
-            <span class="pill">Python</span>
-            <span class="pill">Flask</span>
-            <span class="pill">SQLite</span>
-            <span class="pill">HTML</span>
-            <span class="pill">CSS</span>
-            <span class="pill">JavaScript</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
-            <a href="#" class="btn btn-ghost btn-sm">Live Demo</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="reveal project-card project-card-reverse">
-        <div class="project-media" aria-hidden="true"><span>02</span></div>
-        <div class="project-body">
-          <span class="status-badge status-progress">In Progress</span>
-          <h3 class="project-title">CodexQuest</h3>
-          <p class="project-desc">A gamified coding platform inspired by RPG progression &mdash; solve challenges, earn experience, level up skills, and track growth like a character sheet for your coding ability.</p>
-          <div class="tech-pills">
-            <span class="pill">Python</span>
-            <span class="pill">Flask</span>
-            <span class="pill">JavaScript</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
-            <a href="#" class="btn btn-ghost btn-sm">Live Demo</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="reveal project-card">
-        <div class="project-media" aria-hidden="true"><span>03</span></div>
-        <div class="project-body">
-          <span class="status-badge status-completed">Completed</span>
-          <h3 class="project-title">Student Management System</h3>
-          <p class="project-desc">A console-based Python project for managing student records &mdash; add, update, search and organize academic data with clean, structured logic.</p>
-          <div class="tech-pills">
-            <span class="pill">Python</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
-            <a href="#" class="btn btn-ghost btn-sm">Live Demo</a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- ============ CREDENTIALS ============ -->
-  <section class="credentials" id="credentials">
-    <div class="section-inner">
-      <p class="reveal eyebrow">Credentials</p>
-      <h2 class="reveal section-heading">Recognition &amp; experience</h2>
-      <div class="credentials-grid">
-        <div class="reveal credential-card">
-          <span class="credential-type">Internship</span>
-          <h3 class="credential-title">GlowLogics Internship</h3>
-          <span class="credential-year">2026</span>
-          <a href="#" class="btn btn-outline btn-sm">View Credential</a>
-        </div>
-        <div class="reveal credential-card">
-          <span class="credential-type">Internship</span>
-          <h3 class="credential-title">Python Internship</h3>
-          <span class="credential-year">2025</span>
-          <a href="#" class="btn btn-outline btn-sm">View Credential</a>
-        </div>
-        <div class="reveal credential-card">
-          <span class="credential-type">Workshop</span>
-          <h3 class="credential-title">Flask &amp; Backend Systems Workshop</h3>
-          <span class="credential-year">2025</span>
-          <a href="#" class="btn btn-outline btn-sm">View Credential</a>
-        </div>
-        <div class="reveal credential-card">
-          <span class="credential-type">Hackathon</span>
-          <h3 class="credential-title">RRCE Ideathon</h3>
-          <span class="credential-year">2026</span>
-          <a href="#" class="btn btn-outline btn-sm">View Credential</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CONTACT ============ -->
-  <section class="contact" id="contact">
-    <div class="section-inner contact-inner">
-      <p class="reveal eyebrow">Contact</p>
-      <h2 class="reveal contact-heading">Let's Connect</h2>
-      <p class="reveal contact-text">Have an idea, an opportunity, or simply want to connect?</p>
-      <div class="reveal contact-actions">
-        <a href="mailto:hello@varshiniv.dev" class="btn btn-primary">Email</a>
-        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub</a>
-        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a>
-        <a href="assets/Varshini_V_Resume.pdf" class="btn btn-ghost" download>Resume</a>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<!-- ============ FOOTER ============ -->
-<footer class="footer">
-  <p>Designed &amp; Developed by Varshini V</p>
-  <p>&copy; 2026</p>
-</footer>
-
-<!-- ============ BACK TO TOP ============ -->
-<button class="back-to-top" id="backToTop" aria-label="Back to top">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
-</button>
-
-<script src="script.js"></script>
-=======
-        <!-- Text -->
-        <div class="hero__text">
-          <p class="hero__eyebrow">
-            <span class="hero__status-dot"></span>
-            Available for opportunities
-          </p>
-
-          <h1 class="hero__name">
-            <span class="hero__name-line hero__name-line--accent">Varshini V</span>
-          </h1>
-
-          <p class="hero__role">Computer Science Student</p>
-
-          <p class="hero__tagline">
-            learning, building, becoming.
-          </p>
-
-          <div class="hero__buttons">
-            <a href="#projects" class="btn btn--primary">
-              <span>View Projects</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-            <a href="#contact" class="btn btn--ghost">Contact Me</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Scroll hint -->
-      <div class="hero__scroll" aria-hidden="true">
-        <div class="hero__scroll-line"></div>
-        <span>scroll</span>
-      </div>
-    </header>
-
-    <!-- ═══════════ ABOUT ═══════════ -->
-    <section class="section" id="about">
-      <div class="section__inner">
-        <div class="section__label">
-          <span class="label-line"></span>
-          <span>01 — About</span>
-        </div>
-        <div class="about__grid">
-          <h2 class="section__heading">
-            A calm mind,<br/>
-            <span class="gradient-text">always learning.</span>
-          </h2>
-          <div class="about__body">
-            <p>
-              I'm a Computer Science student who values calm focus and consistent growth.
-              I enjoy understanding concepts deeply and improving one step at a time.
-            </p>
-            <p>
-              Currently exploring Python, web development, and core CS fundamentals —
-              building things that matter, one commit at a time.
-            </p>
-            <div class="about__chips">
-              <span class="chip">🎓 CS Student</span>
-              <span class="chip">🐍 Python</span>
-              <span class="chip">🌐 Web Dev</span>
-              <span class="chip">📐 CS Fundamentals</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-   <!-- ═══════════ SKILLS ═══════════ -->
-<section class="section" id="skills">
-  <div class="section__inner">
-    <div class="section__label">
-      <span class="label-line"></span>
-      <span>02 — Skills</span>
-    </div>
-    <h2 class="section__heading">
-      Tools I work with
-    </h2>
-    <ul class="skills__grid">
-      <li class="skill-card" onclick="filterProjects('python')">
-        <div class="skill-card__icon">🐍</div>
-        <span class="skill-card__name">Python</span>
-      </li>
-
-      <li class="skill-card" onclick="filterProjects('java')">
-        <div class="skill-card__icon">⚙️</div>
-        <span class="skill-card__name">Java</span>
-      </li>
-
-      <li class="skill-card" onclick="filterProjects('web')">
-        <div class="skill-card__icon">🌐</div>
-        <span class="skill-card__name">Web Development</span>
-      </li>
-
-    </ul>
   </div>
 </section>
 
-    <!-- ═══════════ PROJECTS ═══════════ -->
-    <section class="section" id="projects">
-      <div class="section__inner">
-        <div class="section__label">
-          <span class="label-line"></span>
-          <span>03 — Projects</span>
-        </div>
-        <h2 class="section__heading">
-          Things I've built
-        </h2>
-        <div class="projects__grid">
+<section id="story" data-mood="story" class="wrap split">
+  <div>
+    <h2>I learn by building.</h2>
+    <p>I started with websites and Python. Then Flask, data analysis, machine learning and small AI applications. I like it best when working software also feels like somewhere you want to be.</p>
+    <p>I'm still a student, and I'm using this year to go deeper: Node.js, Express, PostgreSQL, DSA, stronger Python, ML and RAG. I'm most drawn to products that make technology more engaging for students.</p>
+  </div>
+    <dl class="sys" aria-label="Profile summary">
+    <div><dt>name</dt><dd>Varshini V</dd></div>
+    <div><dt>role</dt><dd>CSE student</dd></div>
+    <div><dt>focus</dt><dd>Web + Python + AI</dd></div>
+    <div><dt>location</dt><dd>Mandya, India</dd></div>
+    <div><dt>cgpa</dt><dd>7.71 / 10 after 4 semesters</dd></div>
+    <div><dt>graduation</dt><dd>2028 (VTU, GMIT)</dd></div>
+    <div><dt>status</dt><dd class="live">learning, building</dd></div>
+  </dl>
+</section>
 
-          <article class="project-card" data-skill="web">
-  <div class="project-card__header">
-    <div class="project-card__icon-wrap">
-      <span class="project-card__icon">⚔️</span>
+<section id="work" data-mood="work" class="wrap">
+  <h2>Selected projects</h2>
+  <article class="proj lead tilt">
+    <div class="vis v-rag" aria-hidden="true"><b>Q:</b> What does section 3 say about refunds?<br><i>retrieved: page 7, page 9</i><br><b>A:</b> answer built from those passages</div>
+    <div class="body">
+      <p class="tag-line">RAG application, AI prototype. My strongest project.</p>
+      <h3>Ask My PDF Bot</h3>
+      <p>A PDF question-answering prototype. It extracts text, chunks it, creates embeddings, retrieves the most relevant passages and answers from that context. Every answer shows the source pages it used.</p>
+      <ul class="tags"><li>Python</li><li>Streamlit</li><li>PyMuPDF</li><li>SentenceTransformers</li><li>FAISS</li><li>Gemini / extractive fallback</li></ul>
+      <p class="links"><a class="btn primary" href="https://05-pdf-rag-bot.streamlit.app/" target="_blank" rel="noopener">Live demo</a><a class="btn" href="https://github.com/varshiniv-dev/05_pdf_rag_bot" target="_blank" rel="noopener">GitHub</a></p>
     </div>
-    <span class="project-card__tag">HTML · CSS · JavaScript</span>
-  </div>
-
-  <h3 class="project-card__title">CodexQuest</h3>
-
-  <p class="project-card__desc">
-    Gamified coding learning platform inspired by RPG and anime worlds. 
-    Complete quests, gain XP, unlock worlds, and level up while learning programming.
-  </p>
-
-  <a href="https://varshiniv-dev.github.io/codexquest/" 
-     target="_blank" 
-     rel="noopener" 
-     class="project-card__link">
-    Live Demo
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-      <path d="M2 12L12 2M12 2H5M12 2v7"
-      stroke="currentColor"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"/>
-    </svg>
-  </a>
-
-  <a href="https://github.com/varshiniv-dev/codexquest" 
-     target="_blank" 
-     rel="noopener" 
-     class="project-card__link">
-    View on GitHub
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-      <path d="M2 12L12 2M12 2H5M12 2v7"
-      stroke="currentColor"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"/>
-    </svg>
-  </a>
-
-  <div class="project-card__glow" aria-hidden="true"></div>
-</article>
-
-<article class="project-card" data-skill="python">
-  <div class="project-card__header">
-    <div class="project-card__icon-wrap">
-      <span class="project-card__icon">🚌</span>
+  </article>
+  <article class="proj lead tilt flip">
+    <div class="vis v-quest" aria-hidden="true"><span>LV 4</span><div class="xp"><em></em></div><small>quest complete: +120 XP</small></div>
+    <div class="body">
+      <p class="tag-line">Creative frontend, learning platform</p>
+      <h3>CodexQuest</h3>
+      <p>A coding-learning platform built around RPG progression: quests, XP, levels, badges, a leaderboard and profile/dashboard concepts, with the Monaco Editor for writing code in the page. A frontend project, with no production backend.</p>
+      <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Monaco Editor</li></ul>
+      <p class="links"><a class="btn primary" href="https://varshiniv-dev.github.io/codexquest/" target="_blank" rel="noopener">Live demo</a><a class="btn" href="https://github.com/varshiniv-dev/codexquest" target="_blank" rel="noopener">GitHub</a></p>
     </div>
-    <span class="project-card__tag">Web · System</span>
+  </article>
+  <div class="pair">
+    <article class="proj small tilt">
+      <div class="vis v-bus" aria-hidden="true"><span class="dot"></span><span class="route"></span><small>simulated</small></div>
+      <h3>Campus Transport Management System</h3>
+      <p class="tag-line">Flask dashboard prototype</p>
+      <p>Explores simulated bus location updates, traffic, delay estimates, emergency alerts, overspeed and breakdown scenarios. All tracking and emergencies are simulated; there is no real GPS and no public deployment.</p>
+      <ul class="tags"><li>Python</li><li>Flask</li><li>SQLite</li><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+      <p class="links"><a class="btn" href="https://github.com/varshiniv-dev/campus-transport-management-system" target="_blank" rel="noopener">GitHub</a></p>
+    </article>
+    <article class="proj small tilt">
+      <div class="vis v-iv" aria-hidden="true"><span>#</span><span>#</span><span>#</span></div>
+      <h3>InterestVerse</h3>
+      <p class="tag-line">Community platform concept</p>
+      <p>Built during my college frontend training. Explores interest-based communities, interactive UI, gamified interaction and a dark/neon visual style.</p>
+      <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+      <p class="links"><a class="btn" href="https://varshiniv-dev.github.io/InterestVerse-Community-Platform/" target="_blank" rel="noopener">Live site</a></p>
+    </article>
   </div>
+</section>
 
-  <h3 class="project-card__title">Campus Bus Tracking System</h3>
-
-  <p class="project-card__desc">
-    Smart campus transport tracking system for monitoring buses and improving student commute efficiency.
-  </p>
-
-  <a href="https://github.com/varshiniv-dev/campus-bus-tracking-system"
-     target="_blank"
-     class="project-card__link">
-    View on GitHub →
-  </a>
-
-  <div class="project-card__glow"></div>
-</article>
-
-          <article class="project-card" data-skill="python">
-            <div class="project-card__header">
-              <div class="project-card__icon-wrap">
-                <span class="project-card__icon">📋</span>
-              </div>
-              <span class="project-card__tag">Python · CRUD</span>
-            </div>
-            <h3 class="project-card__title">Student Management System</h3>
-            <p class="project-card__desc">Python CRUD project for managing student records. Covers core data operations and file handling.</p>
-            <a href="https://github.com/varshiniv-dev/student-management-system" target="_blank" rel="noopener" class="project-card__link">
-              View on GitHub
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-            <div class="project-card__glow" aria-hidden="true"></div>
-          </article>
-
-          <article class="project-card" data-skill="web">
-            <div class="project-card__header">
-              <div class="project-card__icon-wrap">
-                <span class="project-card__icon">🌐</span>
-              </div>
-              <span class="project-card__tag">HTML · CSS · JS</span>
-            </div>
-            <h3 class="project-card__title">Portfolio Website</h3>
-            <p class="project-card__desc">Minimal animated personal website showcasing projects and skills with a clean dark aesthetic.</p>
-            <a href="https://github.com/varshiniv-dev/portfolio" target="_blank" rel="noopener" class="project-card__link">
-              View on GitHub
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-            <div class="project-card__glow" aria-hidden="true"></div>
-          </article>
-      </div>
-    </section>
-
-    <!-- ═══════════ CONTACT ═══════════ -->
-    <section class="section" id="contact">
-      <div class="section__inner">
-        <div class="section__label">
-          <span class="label-line"></span>
-          <span>04 — Contact</span>
-        </div>
-        <div class="contact__wrap">
-          <h2 class="section__heading contact__heading">
-            Let's connect.
-          </h2>
-          <p class="contact__sub">
-            Open to learning opportunities, collaborations, and conversations.
-          </p>
-          <div class="contact__links">
-            <a href="mailto:varshiniv.dev@gmail.com" class="contact-card">
-              <div class="contact-card__icon">✉️</div>
-              <div class="contact-card__body">
-                <span class="contact-card__label">Email</span>
-                <span class="contact-card__value">varshiniv.dev@gmail.com</span>
-              </div>
-              <div class="contact-card__arrow">↗</div>
-            </a>
-            <a href="https://github.com/varshiniv-dev" target="_blank" rel="noopener" class="contact-card">
-              <div class="contact-card__icon">💻</div>
-              <div class="contact-card__body">
-                <span class="contact-card__label">GitHub</span>
-                <span class="contact-card__value">github.com/varshiniv-dev</span>
-              </div>
-              <div class="contact-card__arrow">↗</div>
-            </a>
-            <a href="https://www.linkedin.com/in/varshini-v-cs" target="_blank" rel="noopener" class="contact-card">
-  <div class="contact-card__icon">🔗</div>
-  <div class="contact-card__body">
-    <span class="contact-card__label">LinkedIn</span>
-    <span class="contact-card__value">linkedin.com/in/varshini-v-cs</span>
+<section id="lab" data-mood="lab" class="wrap">
+  <h2>AI &amp; ML lab</h2>
+  <p class="sub">Four learning prototypes from my AI internship. Educational, built on demo or synthetic data where applicable, not production systems.</p>
+  <div class="lab">
+    <details><summary>Fraud detection</summary><p>Fraud-risk classification and model evaluation.</p></details>
+    <details><summary>Dynamic pricing</summary><p>An educational pricing prediction prototype.</p></details>
+    <details><summary>Medical image classification</summary><p>An image classification prototype on demo data. It is not a diagnostic system and has no clinical validation.</p></details>
+    <details><summary>Demand forecasting</summary><p>A time-series prototype for predicting business demand.</p></details>
   </div>
-  <div class="contact-card__arrow">↗</div>
-</a>
-          </div>
-        </div>
-      </div>
-    </section>
+</section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="footer__inner">
-        <p class="footer__copy">© 2025 Varshini V — designed with care.</p>
-        <a href="#home" class="footer__top" aria-label="Back to top">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path d="M9 14V4M4 9l5-5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-    </footer>
+<section id="concept" data-mood="concept" class="wrap concept">
+  <p class="tag-line">Product concept from IDEARUSH 1.0, an 8-hour ideathon (2026). Not a built product.</p>
+  <h2>FocusFlow / FocusChain</h2>
+  <p>An AI-powered attention economy for students. Education measures grades, not the effort and attention behind them. We asked: what if focus itself could be measured and rewarded? I was Product Lead and pitch presenter on a 3-person team.</p>
+  <div class="ideas">
+    <div><h3>Focus score</h3><p>A measure of attention quality.</p></div>
+    <div><h3>Proof of focus</h3><p>A concept for verified study effort.</p></div>
+    <div><h3>Rewards</h3><p>Tokens for sustained focus.</p></div>
+    <div><h3>AI analysis</h3><p>Insight into study behaviour.</p></div>
+    <div><h3>Smart desk mode</h3><p>A camera concept for posture, gaze and screen use.</p></div>
+    <div><h3>FocusBand</h3><p>A future wearable idea.</p></div>
+  </div>
+  <p class="road"><b>Roadmap we proposed:</b> mobile/software MVP, then college integration, then wearables. None of it is implemented yet.</p>
+</section>
 
-  </div><!-- /content -->
+<section id="path" data-mood="path" class="wrap">
+  <h2>How it's gone so far</h2>
+  <ol class="tl">
+    <li><time>2025–2026</time><h3>Python training</h3><p>Inner Voice &amp; CADD Academy. A 14-week course through a college placement assistance program.</p></li>
+    <li><time>2026</time><h3>Frontend Development Technical Training</h3><p>Crystallize Technologies. A 12-week college Skill Enhancement Program in HTML, CSS and JavaScript. I built InterestVerse.</p></li>
+    <li><time>2026</time><h3>Artificial Intelligence Intern</h3><p>GlowLogics Solutions. Hands-on Python, data analysis, ML and Streamlit prototypes: fraud detection, dynamic pricing, medical image classification, demand forecasting and the PDF RAG chatbot.</p></li>
+  </ol>
+</section>
 
-  <script src="script.js"></script>
->>>>>>> acb0f5b1f587ea01b7096bbd7f3d864083ccc88f
+<section class="wrap cols" data-mood="path">
+  <div>
+    <h2>Toolkit</h2>
+    <dl class="skills">
+      <dt>Frontend</dt><dd>HTML5, CSS3, JavaScript</dd>
+      <dt>Python / backend</dt><dd>Python, Flask, Jinja2, SQLite, SQL</dd>
+      <dt>Data / AI</dt><dd>NumPy, Pandas, Matplotlib, Scikit-learn, XGBoost, TensorFlow/Keras, SentenceTransformers, FAISS, RAG concepts</dd>
+      <dt>Tools</dt><dd>Git, GitHub, VS Code, Jupyter, Google Colab, Streamlit, GitHub Pages</dd>
+      <dt>Learning now</dt><dd>Node.js, Express, PostgreSQL, DSA, deeper Python, AI/ML</dd>
+    </dl>
+  <div>
+    <h2>Recognition</h2>
+    <ul class="plain">
+      <li><b>2nd place</b>, "Decode the Clues, Discover the Treasure", Tech Fest 2K25, P.E.S. College of Engineering, Mandya (2025)</li>
+      <li><b>Product Lead &amp; Pitch Presenter</b>, FocusFlow / FocusChain, IDEARUSH 1.0 (2026)</li>
+      <li><b>Participant</b>, RRCE Ideathon 2026, Team INFRAMIND</li>
+    </ul>
+    <h3 class="gap">Certifications</h3>
+    <ul class="plain small">
+      <li>freeCodeCamp Python Developer (2026)</li>
+      <li>HackerRank Frontend Developer React (2026)</li>
+      <li>Kaggle: Intro to Machine Learning, Intro to Deep Learning</li>
+      <li>Be10X AI Tools / ChatGPT Workshop</li>
+      <li>EF SET English C1 Advanced (68/100)</li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer id="contact" class="contact" data-mood="contact">
+  <div class="wrap">
+    <h2>Have an idea, opportunity, or something interesting to build?</h2>
+    <p class="cta"><a class="btn primary mag" href="mailto:varshiniv.dev@gmail.com">varshiniv.dev@gmail.com</a>
+    <a class="btn mag" href="https://www.linkedin.com/in/varshini-v-cs/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn mag" href="https://github.com/varshiniv-dev" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn mag" href="assets/Varshini_V_Resume.pdf" target="_blank" rel="noopener">Resume</a></p>
+    <p class="fine">Varshini V, Mandya, Karnataka. Still learning, still building.</p>
+  </div>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
